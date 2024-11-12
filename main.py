@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 app=FastAPI()#initialise in variable 
-
+#level 0
 @app.get('/')
 def wish():
 
@@ -12,7 +12,7 @@ def job_intro():
     
     return "I'm AI Developer in MaitriAI"
 
-
+#level 1
 Bag=["Apple","Banana","Mango","Chickoo"]
 
 @app.get('/bag')
