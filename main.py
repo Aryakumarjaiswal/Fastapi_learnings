@@ -30,4 +30,19 @@ def fruits(item_no):
         return "False"
     return Bag[int(item_no)]
 
+#level2:query parameter
+# When you declare other function parameters that are not part of the path parameters,
+# they are automatically interpreted as "query" parameters.
+#The query is the set of key-value pairs that go after the ? in a URL, separated by & characters.
+@app.get('/bbag1')
+def query_func(limit):
+    return {'1':f"{limit} blog from DB"}
+# http://127.0.0.1:8000/Get?limit=23
+@app.get('/Get')
+def key_vale_query1(limit,item):
+    return f"Limit of {item} is {limit}"
+#for http://127.0.0.1:8000/Get?limit=23&item=banana
 
+@app.get('/Get2')
+def key_vale_query1(limit=1,item="Apple"):#Setting default value
+    return f"Limit of {item} is {limit}"
