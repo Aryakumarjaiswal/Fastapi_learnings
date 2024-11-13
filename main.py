@@ -64,6 +64,22 @@ def create_item(name: str, price: float):
 def Print():
     return("Creating...")
 
+#Use below standard way to extrac informations
+from fastapi import FastAPI
+from pydantic import BaseModel
+app=FastAPI()
+
+class Credential(BaseModel):
+    name:str
+    age:int
+
+
+@app.post('/Info')
+def Informations(request:Credential):
+    return request
+
+
+
 
 #to run above you've to do that via /docs.
 
