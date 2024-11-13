@@ -59,4 +59,12 @@ app = FastAPI()
 def create_item(name: str, price: float):
     
     return {"name": name, "price": price}
+
+@app.post('/item/')
+def Print():
+    return("Creating...")
+
+
 #to run above you've to do that via /docs.
+
+
