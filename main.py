@@ -46,3 +46,17 @@ def key_vale_query1(limit,item):
 @app.get('/Get2')
 def key_vale_query1(limit=1,item="Apple"):#Setting default value
     return f"Limit of {item} is {limit}"
+
+#Level 3
+# Import FastAPI
+from fastapi import FastAPI
+
+# Create an instance of FastAPI
+app = FastAPI()
+
+# Define a POST route
+@app.post("/create-item")
+def create_item(name: str, price: float):
+    
+    return {"name": name, "price": price}
+#to run above you've to do that via /docs.
