@@ -15,7 +15,7 @@ def job_intro():
 #level 1
 Bag=["Apple","Banana","Mango","Chickoo"]
 
-@app.get('/bag')
+@app.get('/bag')#'/bag' is path parameter
 def show_item():
     return Bag
 
@@ -35,7 +35,7 @@ def fruits(item_no):
 # they are automatically interpreted as "query" parameters.
 #The query is the set of key-value pairs that go after the ? in a URL, separated by & characters.
 @app.get('/bbag1')
-def query_func(limit):
+def query_func(limit):#limit is query parameter
     return {'1':f"{limit} blog from DB"}
 # http://127.0.0.1:8000/Get?limit=23
 @app.get('/Get')
