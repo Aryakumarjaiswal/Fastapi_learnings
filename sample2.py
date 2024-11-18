@@ -4,35 +4,11 @@ from sqlalchemy.orm import sessionmaker,Session
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
-# Database setup
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test2.db"
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-# Define a sample model
-class Item(Base):
-    __tablename__ = "items"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-
-# Create the database tables
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI()
-
-# Dependency to get a database session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-# DELETE operation using SQLAlchemy
+)
 
 
-app = FastAPI()
+
+#in main.py
 
 @app.delete("/items/{id_no}")
 def delete_item(id_no: int, db: Session = Depends(get_db)):
