@@ -9,7 +9,7 @@ from database2 import engine, SessionLocal
 app = FastAPI()
 
 # Create the tables in the database
-Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)#Call only after defining table
 
 # Dependency to get the database session
 def get_db():
