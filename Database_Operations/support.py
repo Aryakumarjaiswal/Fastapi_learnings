@@ -7,9 +7,8 @@ engine = create_engine(DATABASE_URL)
 # SQL commands to alter the table
 alter_table_sql = """
 ALTER TABLE chat_records ADD COLUMN transfer_call_user_message TEXT;
-ALTER TABLE chat_records ADD COLUMN transfer_call_response TEXT;
 """
-
+#NOTE: You can execute 1 command at a time.
 # Execute the commands
 with engine.connect() as connection:
     try:
